@@ -22,3 +22,32 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
+
+/**
+ * 
+ * @param {*} array 
+ * @param {*} func 
+ * @param {*} seed 
+ * @returns 
+ */
+function reduce(array, func, seed){
+    //looping through collection
+    if (seed === 0) {
+        return 0;
+    }
+    if (seed === undefined) {
+        seed = 1;
+    } else {
+    seed = array[0];
+    } 
+    for (var i = 0; i < array.length; i++) {
+        // if (i === 0 || seed === undefined){
+        //     seed = array[0];
+        // }
+        seed = func(seed, array[i], i);
+        if (i === (array.length - 1)) {
+            return seed
+        }
+    }
+    }
+    module.exports.reduce = reduce;
