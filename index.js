@@ -382,3 +382,22 @@ function reduce(array, func, seed){
     }
     }
     module.exports.reduce = reduce;
+
+/**
+ * 
+ * @param {*} object 
+ * @returns 
+ */
+
+    function extend(object){
+        var o = object;
+        for(var i = 1; i < arguments.length; i++) {
+          var arg = arguments[i];
+          for(var p in arg) {
+            Object.assign(o, arg);
+          }
+        }
+        return o;
+    }
+
+    module.exports.extend = extend;
